@@ -34,3 +34,12 @@ Using the `id` as the index, remove that item from the Array of phrases.
 On that page, tell the user that the phrase has been deleted.
 
 Show them links to go back to `/all`.
+
+
+# For the more curious
+
+If you'd like to know more about the library used for generating the fake data, check out https://www.npmjs.com/package/faker
+
+Bonus challenges:
+
+- Add links (with routes) that add *different* kinds of fake data from the `faker` module!
