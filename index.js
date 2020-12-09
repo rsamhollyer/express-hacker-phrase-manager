@@ -37,10 +37,28 @@ app.get('/next', (req, res) => {
 app.get('/all', (req, res) => {
     res.render('all', {
         locals: {
-            all: allPhrases
+            all: allPhrases,
+            count: allPhrases.length,
         }
     })
 });
+
+app.get("/all/show/:id",(req,res)=>{
+    const {id} = req.params
+    res.render("show", {
+        locals:{id,}
+    })
+})
+
+app.get("/delete/:msg",(req,res)=>{
+    const {msg} = req.params
+    allPhrases = allPhrases.filter(p=> p!=msg)
+    res.render("delete", {
+        locals:{msg,}
+    })
+})
+
+
 
 server.listen(PORT, HOST, () => {
     console.log(`Working hard over at http://${HOST}:${PORT}`);

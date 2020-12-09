@@ -6,13 +6,16 @@
     <title>Hey there</title>
 </head>
 <body>
-  <h2>
+  <h2>There are ${count} total phrases on this page!</h2>
+  <h3>
+    <ol>
     ${
-      all.map(phrase => `
-        <p>${phrase}</p>
+      all.map((phrase,idx) => `
+        <li><a href="/all/show/${phrase}/">${phrase}</a></li>
       `).join('')
     }
-  </h2>
+  </ol>
+  </h3>
   <a href="/next">Go again</a><br />
   <a href="/">Clear the phrases</a>  
 </body>
